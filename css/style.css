@@ -1665,6 +1665,10 @@ article .desc .meta span a {
   .blog-flex .f-entry-img,
   .blog-flex .blog-entry {
     width: 100%;
+    padding: 0 !important;
+  }
+  .blog-post .desc h3{
+    font-size: 20px !important;
   }
 }
 
@@ -2763,10 +2767,14 @@ svg path:hover {
   .cn_logo {
     width: 400px;
     cursor: pointer;
+    position: relative;
+    right: 37%;
+    bottom: 20px;
+    margin: 0 auto !important;
   }
 
   .contact-map {
-    margin: 7% 13%;
+    margin: 0 auto;
 
   }
 
@@ -2779,12 +2787,17 @@ svg path:hover {
   .icon-logo {
     display: inline-block !important;
     width: 170px !important;
-    height: 65px !important;
+    height: 75px !important;
     position: relative !important;
     top: 20px !important;
     left: -15px !important;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
+  }
+  .media-size{
+    position: relative;
+    left: 5%;
+    top: 50px;
   }
 }
 
@@ -2837,15 +2850,7 @@ div.drop {
   animation: appear 2s 2.5s forwards;
 }
 
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    
-  }
-}
+
 #button{
   width: 100px;
   height: 30px;
@@ -2883,7 +2888,7 @@ div.drop {
   opacity: 0;
   width: 75%;
   height: 75%;
-  border: 5px solid #004cd5;
+  border: 5px solid deepskyblue;
   animation: dripple 2s ease-out 1s;
 
 }
@@ -2892,34 +2897,6 @@ div.drop {
   z-index: 2;
 }
 
-@keyframes drip {
-  45% {
-    top: 0;
-    border-radius: 100% 5% 100% 100%;
-    transform: rotate(-45deg);
-  }
-  100% {
-    top: 0;
-    transform: rotate(0deg);
-    border-radius: 100%;
-  }
-}
-
-@keyframes dripple {
-  0% {
-    width: 150px;
-    height: 150px;
-  }
-  25% {
-    opacity: 1;
-  }
-  100% {
-    width: 500px;
-    height: 500px;
-    top: -20%;
-    opacity: 0;
-  }
-}
 
 .wrapper {
   width: 100%;
@@ -2941,8 +2918,27 @@ div.drop {
   animation: wave 15s infinite linear;
 }
 
-@keyframes wave {
-  from { transform: rotate(0deg);}
-  from { transform: rotate(360deg);}
+@media screen and (max-width: 768px) {
+#button {
+  padding-top: 3px; 
 }
-
+div.drop {
+  width: 75%;
+  height: 75%;
+  position: absolute;
+  left: 25px;
+}
+.watermark > img {
+  width: 200px;
+  margin: 30px -33px;
+}
+.drop-container:before,
+.drop-container:after {
+  content: '';
+  position: absolute;
+  top: 35%;
+  opacity: 0;
+  width: 50%;
+  height: 50%;
+}
+}
